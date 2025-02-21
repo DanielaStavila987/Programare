@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+</head>
+
+<body>
+  <h1>Pagina de Autentificare</h1>
+  <form id="login-form">
+    <label for="username">Nume utilizator:</label>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <label for="password">Parolă:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <button type="submit">Autentificare</button>
+  </form>
+
+  <p class="success-message" style="display: none; color: green;">Autentificare reușită!</p>
+  <p class="error-message" style="display: none; color: red;">Date incorecte. Încercați din nou.</p>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function (e) {
+      e.preventDefault(); // Previne comportamentul default al formularului
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Simulăm un login simplu
+      if (username === 'testUser' && password === 'securePassword') {
+        document.querySelector('.success-message').style.display = 'block';
+        document.querySelector('.error-message').style.display = 'none';
+      } else {
+        document.querySelector('.error-message').style.display = 'block';
+        document.querySelector('.success-message').style.display = 'none';
+      }
+    });
+  </script>
+  <script> src = 'loghin.test.js' </script>
+</body>
+
+</html>
